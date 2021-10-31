@@ -20,6 +20,12 @@ module.exports = {
         players: loadPlayers()
     },
     plugins: [
-        `gatsby-plugin-styled-components`
+        `gatsby-plugin-styled-components`,
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: 'G-YYRSGF39EF'
+            }
+        }
     ]
 }
