@@ -45,6 +45,7 @@ const IndexPage = (props) => {
     query {
       site {
         siteMetadata {
+          lastUpdated
           players {
             name
             status
@@ -74,7 +75,7 @@ const IndexPage = (props) => {
           <Table data={unavailablePlayers} />
         </section>
       </main>
-      <Footer />
+      <Footer lastUpdated={data.site.siteMetadata.lastUpdated} />
     </PageStyles>
   )
 }
