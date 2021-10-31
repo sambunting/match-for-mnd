@@ -10,8 +10,8 @@ const Style = styled.footer`
   }
 `
 
-const Footer = () => <Style>
-  <p>Last updated at {new Date().toLocaleString()}</p>
+const Footer = ({ lastUpdated }) => <Style>
+  <p>Last updated at {lastUpdated}</p>
   <div>
     Developed by Sam Bunting
     | <a href="https://sam.bunting.dev" target="_blank" rel="noreferrer">sam.bunting.dev</a>

@@ -17,7 +17,8 @@ const loadPlayers = () => {
 module.exports = {
     siteMetadata: {
         siteUrl: `https://www.yourdomain.tld`,
-        players: loadPlayers()
+        players: loadPlayers(),
+        lastUpdated: new Date().toLocaleString('en-gb'),
     },
     plugins: [
         `gatsby-plugin-styled-components`,
