@@ -20,6 +20,6 @@ module.exports = {
         players: loadPlayers()
     },
     plugins: [
-
+        `gatsby-plugin-styled-components`
     ]
 }
