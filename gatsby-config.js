@@ -16,7 +16,7 @@ const loadPlayers = () => {
 
 module.exports = {
     siteMetadata: {
-        siteUrl: `https://www.yourdomain.tld`,
+        siteUrl: `https://match-for-mnd.netlify.app`,
         players: loadPlayers(),
         lastUpdated: new Date().toLocaleString('en-gb'),
     },
