@@ -38,9 +38,7 @@ const PageStyles = styled.div`
 `
 
 // markup
-const IndexPage = (props) => {
-  console.log(props);
-
+const IndexPage = () => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -50,13 +48,17 @@ const IndexPage = (props) => {
             name
             status
             source
+            role
           }
         }
       }
     }
   `)
 
-  const confirmedPlayers = data.site.siteMetadata.players.filter((x) => x.status === "Confirmed")
+  console.log(data);
+
+  const confirmedPlayers = data.site.siteMetadata.players.filter((x) => x.status === "Confirmed" && x.role !== 'manager')
+  const confirmedManagement = data.site.siteMetadata.players.filter((x) => x.status === "Confirmed" && x.role === 'manager')
   const unavailablePlayers = data.site.siteMetadata.players.filter((x) => x.status === "Unavailable")
 
   return (
@@ -68,6 +70,11 @@ const IndexPage = (props) => {
         <section>
           <h2>Confirmed Players</h2>
           <Table data={confirmedPlayers} />
+        </section>
+
+        <section>
+          <h2>Confirmed Management</h2>
+          <Table data={confirmedManagement} />
         </section>
 
         <section>
